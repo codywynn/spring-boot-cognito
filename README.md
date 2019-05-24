@@ -23,6 +23,10 @@ aws.cognito.userNameField=<username>
 aws.cognito.groupsField=<group>
 ```
 
+The application uses your 'default' AWS profile, so make sure your AWS CLI is configured correctly.
+
+https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+
 ### Quick Start
 
 ```
