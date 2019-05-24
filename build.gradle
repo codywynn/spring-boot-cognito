@@ -1,0 +1,47 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.5.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.example'
+version = '5.0.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework.boot:spring-boot-starter-security")
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+	compile("org.apache.commons:commons-lang3")
+	compile group: "com.twilio.sdk", name: "twilio", version: "7.32.0"
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.1.1.RELEASE'
+	
+	compile group: 'com.amazonaws', name: 'aws-java-sdk-ses', version: '1.11.439'
+	compile group: 'com.amazonaws', name: 'aws-java-sdk-cognitoidp', version: '1.11.439'
+	compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '1.11.449'
+	compile("io.jsonwebtoken:jjwt:0.7.0")
+	compile group: 'org.json', name: 'json', version: '20180813'
+	compile group: 'com.nimbusds', name: 'nimbus-jose-jwt', version: '6.3'
+	compile group: 'com.auth0', name: 'java-jwt', version: '3.3.0'
+	compile group: 'com.auth0', name: 'jwks-rsa', version: '0.6.1'
+	compile group: 'com.github.derjust', name: 'spring-data-dynamodb', version: '5.1.0'
+
+	testCompile group: 'junit', name: 'junit', version: '4.12'
+}
